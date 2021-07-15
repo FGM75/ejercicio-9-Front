@@ -6,7 +6,7 @@ import { Button, Col, Form } from "react-bootstrap";
 export const Formulario = (props) => {
   const { formularioAbierto, setFormularioAbierto, nuevoTipo, editarTipo } =
     props;
-  const editando = !!formularioAbierto.id;
+  const editando = !!formularioAbierto._id;
   const [tipo, setTipo] = useState(editando ? formularioAbierto.tipo : "");
   const textoBoton = editando ? "Editar" : "Crear";
   const elementoInput = useRef(null);
@@ -20,7 +20,7 @@ export const Formulario = (props) => {
     e.preventDefault();
     if (editando) {
       editarTipo({
-        id: formularioAbierto.id,
+        _id: formularioAbierto._id,
         tipo,
       });
     } else {
@@ -32,8 +32,8 @@ export const Formulario = (props) => {
   };
   return (
     <Col xs="12">
-      <Form noValidate onSubmit={guardaTipo}>
-        <Form.Group controlId="nombre">
+      <Form noVal_idate onSubmit={guardaTipo}>
+        <Form.Group control_id="nombre">
           <Form.Label>Tipo de gato:</Form.Label>
           <Form.Control
             type="text"
