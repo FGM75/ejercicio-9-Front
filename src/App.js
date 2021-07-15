@@ -56,7 +56,7 @@ function App() {
     }
   };
   const cargarTipos = useCallback(async () => {
-    const tiposAPI = await fetchEmpepinao(urlAPI);
+    const tiposAPI = await fetchEmpepinao(urlAPI + "listado");
     if (tiposAPI) {
       setTipos(tiposAPI);
     }
